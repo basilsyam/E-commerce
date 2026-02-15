@@ -1,0 +1,123 @@
+:root{
+    --bodyBG:#efefef;
+    --bodyFont:#2b3445;
+    --blue: rgba(143, 186, 243, 0.997);
+    --footer-bg: #212529;
+    --blue-button: #1976d2;
+}
+body{
+    background-color: #e3e3e3;
+}
+section{
+    width: 70%;
+    margin: auto;
+}
+ article:hover{
+        /* scale: 1.1; */
+        transform:translate(10px);
+    }
+section.cart article{
+
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--blue-button);
+    border-bottom: 2px solid var(--blue-button);
+    margin-inline:auto ;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    box-shadow: 0 0 10px 2px var(--blue);
+
+    & .fa-trash-can{
+        color: red;
+        margin-right: 5px;
+    }
+    & .count{
+        justify-content: space-between;
+        align-items: center;
+        color: var(--blue-button);
+        padding: 20px;
+        font-size: 20px;
+        & .decrease,& .increase{
+            display: block;
+            margin: 10px;
+        }
+        & .quantity{
+            background-color: var(--blue-button);
+            width: 25px;   
+            height: 25px;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }     
+    }
+}
+.clear{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.clear i{
+    color: white;
+}
+section.summary {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 10px 2px var(--blue);
+    width: 244px;
+    margin : 30px auto;
+    border-radius: 6px;
+    & h2{
+        border-bottom: 1px solid #ccc;
+    }
+    & .info{
+        justify-content: space-between;
+        align-items: center;
+    }
+    & button{
+        color: white;
+        background-color: var(--blue-button);
+        padding: 5px;
+        width: 100%;
+        height: 20%;
+        padding: 10px;
+        opacity: 0.5;
+        cursor: no-drop;
+    }
+    & a{
+        color: rgba(249, 69, 69, 0.528);
+        padding: 5px;
+        margin: 10px;
+
+        animation: shadow 2s infinite ease-in-out;
+    }
+
+}
+
+
+
+@media   (min-width:540px) and (max-width: 735px){
+    .cart img{
+        display: block;
+        margin-inline: auto ;
+    }
+}
+@keyframes shadow{
+    form{
+        box-shadow: 0 0 0 0 transparent;
+    } 
+    to{
+        box-shadow: 0 0 2px 2px rgba(209, 120, 120, 0.658);
+
+    }
+
+}   

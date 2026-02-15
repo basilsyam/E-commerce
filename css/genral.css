@@ -1,0 +1,90 @@
+/* start general style */
+:root{
+    --bodyBG:#f6f6f6;
+    --bodyFont:#2b3445;
+    --blue: rgba(143, 186, 243, 0.997);
+    --footer-bg: #212529;
+}
+.dark{
+    --bodyBG: #f6f6f6;
+    --bodyFont:#2b3445;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 ;
+}
+@font-face {
+    font-family: 'basil';
+    src: url(fonts/Roboto.zip);
+}
+html{
+    font-family: 'basil' ,sans-serif;
+    scroll-behavior: smooth;
+    scrollbar-color: #9e4673,#3d4a59;
+}
+
+body{
+    background-color: var(--bodyBG);
+    color: var(--bodyFont);
+}
+::-webkit-scrollbar{
+    width: 0.88rem;
+}
+::-webkit-scrollbar-track{
+    border: 7px solid #292c3b;
+    box-sizing: inset 0 0 2.5px rgba(0 ,0 , 0 ,0.5s);
+    border: 6px;
+    background-color: #d4d4d8;
+} 
+
+::-webkit-scrollbar-track{
+    border: 7px solid #292c3b;
+    box-sizing: inset 0 0 2.5px rgba(0 ,0 , 0 ,0.5s);
+    border: 6px;
+    background-color: #d4d4d8;
+} 
+::-webkit-scrollbar-thumb{
+    background: #999;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #333;
+    border-radius: 2px;
+}
+a , button{
+    all: unset;
+    display: inline;
+}
+button[disabled]{
+    opacity: 0.5;
+    cursor: no-drop;
+
+}
+a:hover,button:hover{
+    scale: 0.8;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+}
+.fa-solid{
+    color: var(--bodyFont);
+    font-weight: bold
+}
+p{
+    font-size: 0.9rem;
+    font-weight: bolder;
+    color: #999;
+}
+
+main{
+    width: 80%;
+    margin: auto;
+}
+i{
+        transition: 0.5s;
+}
+p{
+    text-wrap: balance;
+}

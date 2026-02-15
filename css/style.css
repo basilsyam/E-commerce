@@ -1,0 +1,190 @@
+/* start header */
+div.top-img {
+    background-image: url(../image/bac.jpg);
+    height: 100vh;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover; /* تم التصحيح من left إلى cover ليعمل بشكل صحيح */
+    position: relative;
+    background-attachment: fixed;
+}
+
+@media( min-width :1500px) {
+    div.top-img { background-position: right; }
+}
+
+@media( max-width :1000px) {
+    div.top-img { background-position: left; }
+}
+
+/* start section description */
+section.content {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+}
+
+section.content .lifestyle {
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+section.content .men,
+section.content .sale {
+    text-transform: uppercase;
+    font-size: 1.1em;
+    color: black;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+section.content span {
+    display: inline-block;
+    color: rgb(213, 34, 6);
+}
+
+section.content .free-shopping {
+    text-transform: capitalize;
+    font-size: 0.6em;
+}
+
+section.content button {
+    background-color: var(--bodyFont);
+    color: var(--blue);
+    padding: 7px 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* start main */
+main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 35px;
+    animation: top-down .5s infinite alternate-reverse;
+    transition: 1s;
+    text-transform: uppercase;
+}
+
+main section.products {
+    display: flex; /* إضافة لضمان عمل الـ wrap */
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+
+    & article.card {
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 2px 6px var(--blue);
+        transition: 0.5s;
+        margin-top: 45px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width :700px ) {
+        & article.card:last-of-type {
+            margin-bottom: 50px;
+        }
+    }
+
+    & article.card:hover {
+        scale: 1.1;
+        transform: translateY(5px);
+    }
+
+    & img {
+        border-radius: 20px;
+        margin-bottom: 5px;
+    } 
+
+    & a {
+        position: relative;
+    }
+
+    /* تحسين ظهور الـ Tooltip */
+    & a::before {
+        content: " click the image to see more information";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--footer-bg);
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--blue);
+        bottom: 120%; /* تغيير الموقع ليكون فوق الصورة دائماً */
+        visibility: hidden;
+        transition: 0.5s linear;
+        white-space: nowrap;
+        z-index: 10;
+    }
+
+    & article:hover a::before {
+        visibility: visible;
+    }
+
+    & h2 {
+        margin-bottom: 5px;
+        background-color: var(--bodyFont);
+        color: var(--bodyBG);
+        padding: 5px;
+        text-transform: capitalize;
+        border-radius: 10px;
+    }
+
+    & p {
+        line-height: 1.4;
+        font-weight: bold;
+        margin: 5px;
+        color: var(--bodyFont);
+        border-bottom: 1px solid black;
+    }
+
+    & .more {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & .more .price {
+        padding: 7px;
+        border-radius: 5px;
+        color: red;
+        font-weight: bold;
+    }
+
+    & .more .add-to-cart {
+        background-color: var(--blue);
+        color: var(--bodyBG);
+        padding: 10px;
+        text-transform: capitalize;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    & article:hover .more .add-to-cart,
+    & article:hover .more .price {
+        animation: left-right 1s infinite alternate-reverse;
+    }
+}
+
+/* Animations */
+@keyframes top-down {
+    from { transform: translateY(0); }
+    to { transform: translateY(10px); }
+}
+
+@keyframes left-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(5px); }
+}
